@@ -3,9 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Parkinsons and Typing Ability</title>
+    <link rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- other imports -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Parkinsons Study</h1>
+    <div class="container">
+      <nav class="nav">
+        <!-- Navigation items would go here (if we use it) -->
+      </nav>
+      
+      <!---------------------------------------------------------------------------------
+      Hero Section (front page)
+      ---------------------------------------------------------------------------------->
+      <section class="hero-section">
+        <div class="content">
+          <h1>The Effect of <span class="highlight-purple">Parkinsons</span> on Typing Ability</h1>
+          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in 
+            libero risus semper habitant arcu eget. Et integer facilisi eget diam.</p>
+          
+          <div class="button-container">
+            <button class="btn btn-primary">Filter</button>
+            <button class="btn btn-secondary">Explore more</button>
+          </div>
+        </div>
+  
+        <!-- Hand Picture and Decorations  -->
+        <div class="product-display">
+          <div class="star star-1">✧</div>
+          <div class="star star-2">✧</div>
+          
+          <div class="rectangle-decoration"></div>
+
+          <div class="product-image">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b298df55832981.5994fbb4e36d6.gif" alt="eWatch smartwatch">
+          </div>
+          
+          <div class="badge badge-top">IDK</div>
+          <div class="badge badge-bottom">Count it up</div>
+        </div>
+      </section>
+      
+      <!---------------------------------------------------------------------------------
+      Author Names and roles
+      ---------------------------------------------------------------------------------->
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-sun"></i></div>
+          <h3 class="feature-title">Eric <span class="highlight-orange">Cheng</span></h3>
+          <p class="feature-desc">role</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-star"></i></div>
+          <h3 class="feature-title">Jerric <span class="highlight-orange">Jiang</span></h3>
+          <p class="feature-desc">role</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-eye"></i></div>
+          <h3 class="feature-title">Omid <span class="highlight-orange">Alamdar</span></h3>
+          <p class="feature-desc">role</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-globe"></i></div>
+          <h3 class="feature-title">Matthew <span class="highlight-orange">Budding</span></h3>
+          <p class="feature-desc">role</p>
+        </div>
+      </div>
+
+      <!---------------------------------------------------------------------------------
+      Data Overview and Typing Speed Histogram Section
+      ---------------------------------------------------------------------------------->
+      <section class="stats-and-histo-container">
+        <!-- Key statistics section -->
+        <div class="stats-section">
+          <div class="stats-card">
+            <h3>Key Statistics</h3>
+            <p class="stats-description">Brief overview of Parkinson's disease and our dataset.
+            </p>
+      
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-value">10 million</span>
+                <span class="stat-label">people suffer from Parkinsons globally</span>
+              </div>
+      
+              <div class="stat-item">
+                <span class="stat-value">?x</span>
+                <span class="stat-label">stat</span>
+              </div>
+      
+              <div class="stat-item">
+                <span class="stat-value">?%</span>
+                <span class="stat-label">stat</span>
+              </div>
+      
+              <div class="stat-item">
+                <span class="stat-value">?-?</span>
+                <span class="stat-label">stat</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Density Histogram Section -->
+        <div class="histo-section">
+          <h2>Typing Speed Comparison</h2>
+          <p class="histo-description">Explain why one would assume that people with parkinsons would type slower. 
+            Show that our data doesn't reflect that. Show a density plot as evidence 
+          </p>
+      
+          <div class="density-plot-container">
+            <!-- This div will contain your density plot visualization -->
+            <div id="density-plot">
+              <!-- Placeholder for your visualization -->
+              <p class="placeholder-text">put density plot here</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!---------------------------------------------------------------------------------
+      Scatterplot Section
+      ---------------------------------------------------------------------------------->
+      <section class="scatter-section">
+        <div class="text-content">
+          <h2>Perhaps the Severity of Parkinsons Affects Typing Speed?</h2>
+          <p>Define what UPDRS is. and show scatter of updrs and typing speed.</p>
+        </div>
+        <div class="scatter-container">
+          <svg id="scatter-plot"></svg>
+        </div>
+      </section>
+
+      <!---------------------------------------------------------------------------------
+      Quote Break
+      ---------------------------------------------------------------------------------->
+      <div class="quote-container">
+        <blockquote class="featured-quote">
+          <p>"Many people know what Parkinson's looks like… but not the mental anguish it can cause, and the darkest moments
+            we go through."</p>
+          <cite>Guy Deacon, former colonel of the Royal Armoured Corps in the British Army</cite>
+        </blockquote>
+      </div>
+
+
+
+
+    </div>
 </body>
 </html>
