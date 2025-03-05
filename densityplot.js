@@ -1,8 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const margin = { top: 20, right: 30, bottom: 50, left: 60 },
-          width = 600 - margin.left - margin.right,
-          height = 400 - margin.top - margin.bottom;
+    console.log("Density Plot Script Loaded"); // Debugging check
 
+    const margin = { top: 20, right: 30, bottom: 50, left: 60 },
+          width = 500 - margin.left - margin.right,
+          height = 300 - margin.top - margin.bottom;
+
+    // Remove any existing SVG before adding a new one
+    d3.select("#density-plot").select("svg").remove();
+
+    // Select the density-plot div and append an SVG
     const svg = d3.select("#density-plot")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -10,13 +16,18 @@ document.addEventListener("DOMContentLoaded", function () {
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
+    console.log("SVG Created for Density Plot"); // Debugging check
+
     // Load the dataset
     d3.csv("data/typing_data.csv").then(data => {
+        console.log("Data Loaded", data); // Debugging check
+
+        // Ensure the typingSpeed column is numeric
         data.forEach(d => {
-            d.typingSpeed = +d.typingSpeed;  // Convert to numeric
+            d.typingSpeed = +d.typingSpeed;
         });
 
-        // Define scales
+        // X-axis scale
         const x = d3.scaleLinear()
             .domain(d3.extent(data, d => d.typingSpeed))
             .range([0, width]);
@@ -38,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const kde = kernelDensityEstimator(kernelEpanechnikov(7), x.ticks(40));
 
-        // Separate data into two groups: Parkinson’s and No Parkinson’s
+        // Filter groups
         const dataPD = data.filter(d => d.has_parkinsons === "Yes").map(d => d.typingSpeed);
         const dataNoPD = data.filter(d => d.has_parkinsons === "No").map(d => d.typingSpeed);
 
@@ -54,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .x(d => x(d[0]))
             .y(d => y(d[1]));
 
-        // Parkinson's Density Curve (Red)
+        // Parkinson's Density (Red)
         svg.append("path")
             .datum(densityPD)
             .attr("fill", "none")
@@ -63,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .attr("d", line)
             .attr("opacity", 0.8);
 
-        // No Parkinson's Density Curve (Blue)
+        // No Parkinson's Density (Blue)
         svg.append("path")
             .datum(densityNoPD)
             .attr("fill", "none")
@@ -95,8 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .attr("text-anchor", "middle")
             .text("Density");
 
-        // Legend
-        svg.append("text").attr("x", width - 120).attr("y", 20).text("Parkinson's").style("fill", "red");
-        svg.append("text").attr("x", width - 120).attr("y", 40).text("No Parkinson's").style("fill", "blue");
-    });
+        console.log("Density Plot Rendered Successfully"); // Debugging check
+
+    }).catch(error => console.error("Error loading CSV: ", error));
 });
