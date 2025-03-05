@@ -298,14 +298,12 @@ Stats and Histogram Container
     max-width: 90%;
 }
 
+/********************************************************************************
+Density plot section
+********************************************************************************/
 .density-plot-container {
-    background-color: white;
-    border-radius: 1.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    min-height: 300px;
+    flex: 1;
     width: 100%;
-    position: relative;
 }
 
 #density-plot {
@@ -315,6 +313,7 @@ Stats and Histogram Container
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1em;
 }
 
 .placeholder-text {
@@ -322,9 +321,6 @@ Stats and Histogram Container
     font-style: italic;
 }
 
-/********************************************************************************
-Density plot section
-********************************************************************************/
 svg {
     font-family: 'Work Sans', sans-serif;
 }
