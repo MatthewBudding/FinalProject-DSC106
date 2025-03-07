@@ -325,6 +325,10 @@ svg {
     font-family: 'Work Sans', sans-serif;
 }
 
+text {
+    font-family: 'Work Sans', sans-serif;
+}
+
 /********************************************************************************
 Scatterplot section
 ********************************************************************************/
@@ -433,5 +437,13 @@ Responsive design
     .feature {
         flex-basis: 50%;
         margin-bottom: 1rem;
+    }
+    .scatter-section {
+        flex-direction: column;
+    }
+
+    .text-content,
+    .scatter-container {
+        max-width: 100%;
     }
 }
