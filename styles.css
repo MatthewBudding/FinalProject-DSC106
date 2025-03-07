@@ -82,6 +82,26 @@ h2 {
     color: var(--orange);
 }
 
+/* Blinking cursor */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.blinking-cursor {
+    font-weight: 100;
+    color: var(--black);
+    animation: blink 1.1s steps(1, start) infinite;
+}
+
 /* Buttons */
 .button-container {
     display: flex;
@@ -108,6 +128,16 @@ h2 {
     background-color: transparent;
     color: var(--black);
     border: 1px solid var(--black);
+}
+
+.btn-primary:hover {
+    background-color: #4b42cc;
+    /* Darker purple */
+}
+
+.btn-secondary:hover {
+    background-color: var(--orange);
+    color: var(--white);
 }
 
 /* Product display */
