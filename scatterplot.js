@@ -1,13 +1,13 @@
-const margin = {top: 20, right: 50, bottom: 100, left: 80},
-      width = 800 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+const margin = { top: 20, right: 65, bottom: 100, left: 55 },
+    width = 800 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
 const svg = d3.select("#scatter-plot")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
-  
+
 // Load both CSV files and merge the data
 Promise.all([
     d3.csv("data/GT_DataPD_MIT-CS1PD.csv"),
@@ -37,6 +37,17 @@ Promise.all([
     svg.append("g")
         .call(d3.axisLeft(yScale));
 
+    // Create tooltip div
+    const tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("position", "absolute")
+        .style("background-color", "rgba(255, 255, 255, 0.9)")
+        .style("border", "1px solid #ddd")
+        .style("border-radius", "5px")
+        .style("padding", "10px")
+        .style("pointer-events", "none")
+        .style("opacity", 0);
+
     svg.selectAll("circle")
         .data(data)
         .enter().append("circle")
@@ -45,23 +56,19 @@ Promise.all([
         .attr("r", 5)
         .attr("fill", d => colorScale(d))
         .on("mouseover", (event, d) => {
-            d3.select("#tooltip")
-                .style("left", (event.pageX + 5) + "px")
-                .style("top", (event.pageY - 28) + "px")
-                .style("opacity", 1)
-                .html(`UPDRS108: ${d.updrs108}<br>Typing Speed: ${d.typingSpeed}`);
+            tooltip.style("opacity", 1);
+        })
+        .on("mousemove", (event, d) => {
+            tooltip.html(`
+                <div>UPDRS108: ${d.updrs108}</div>
+                <div>Typing Speed: ${d.typingSpeed.toFixed(3) }</div>
+            `)
+                .style("left", (event.pageX + 15) + "px")
+                .style("top", (event.pageY - 30) + "px");
         })
         .on("mouseout", () => {
-            d3.select("#tooltip").style("opacity", 0);
+            tooltip.style("opacity", 0);
         });
-
-    d3.select("body").append("div")
-        .attr("id", "tooltip")
-        .style("position", "absolute")
-        .style("background", "lightgray")
-        .style("padding", "5px")
-        .style("border-radius", "5px")
-        .style("opacity", 0);
 
     svg.append("text")
         .attr("x", width / 2 - 100)
@@ -73,7 +80,7 @@ Promise.all([
     svg.append("text")
         .attr("transform", "rotate(-90)")
         .attr("x", -height / 2)
-        .attr("y", -60)
+        .attr("y", -40)
         .style("text-anchor", "middle")
         .style("font-size", "16px")
         .text("Typing Speed");
