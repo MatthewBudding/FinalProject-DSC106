@@ -382,7 +382,7 @@ Scatterplot section
 }
 
 /* Ensure the SVG takes full width */
-svg {
+/* svg {
     background-color: white;
     border-radius: 1.5rem;
     padding: 1.5rem;
@@ -391,7 +391,7 @@ svg {
     width: 100%;
     position: relative;
     padding-bottom: 2rem;
-}
+} */
 
 
 /********************************************************************************
