@@ -67,6 +67,10 @@ h2 {
     max-width: 90%;
 }
 
+p {
+    margin-bottom: 1.5rem;
+}
+
 .subtitle {
     font-size: 1.1rem;
     margin-bottom: 2rem;
