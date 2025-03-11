@@ -184,15 +184,6 @@ function createMetricCharts(containerId, width, height) {
         .attr("font-size", "12px")
         .text("Key Press Delay");
 
-    // Add y-axis label for delay
-    // delayChart.append("text")
-    //     .attr("transform", "rotate(-90)")
-    //     .attr("y", -35)
-    //     .attr("x", -chartHeight / 2)
-    //     .attr("text-anchor", "middle")
-    //     .attr("font-size", "10px")
-    //     .text("Delay (ms)");
-
     // Create static axes for delay chart (0-2500ms)
     const staticYScaleDelay = d3.scaleLinear()
         .domain([0, 2500]) // Static range from 0 to 2000ms
@@ -222,15 +213,6 @@ function createMetricCharts(containerId, width, height) {
         .attr("text-anchor", "middle")
         .attr("font-size", "12px")
         .text("Key Press Duration");
-
-    // Add y-axis label for duration
-    // durationChart.append("text")
-    //     .attr("transform", "rotate(-90)")
-    //     .attr("y", -35)
-    //     .attr("x", -chartHeight / 2)
-    //     .attr("text-anchor", "middle")
-    //     .attr("font-size", "10px")
-    //     .text("Duration (ms)");
 
     // Create static axes for duration chart (0-500ms)
     const staticYScaleDuration = d3.scaleLinear()
@@ -442,22 +424,21 @@ function simulateKeyPresses(data, svg, id, pressColor, metricData, startTime) {
 // Main function to create and animate the keyboard
 function createComparativeVisualization() {
     // Create container for the entire visualization
-    const container = d3.select("body")
-        .append("div")
-        .attr("class", "visualization-container")
-        .style("display", "flex")
-        .style("justify-content", "space-between")
-        .style("width", "100%")
-        .style("max-width", "1200px")
-        .style("margin", "0 auto")
-        .style("padding", "20px");
+    const container = d3.select("#keyboard-comparison-section")
+      .append("div")
+      .attr("class", "visualization-container")
+      .style("display", "flex")
+      .style("width", "100%")
+      .style("max-width", "1200px")
+      .style("margin", "0 auto")
+      .style("padding", "20px");
+
 
     // Create left container for Parkinsons keyboard
     const leftContainer = container.append("div")
-        .attr("class", "keyboard-container")
+        .attr("class", "keyboard-container")  // Use class for styling
         .attr("id", "parkinsons-container")
-        .style("flex", "1")
-        .style("margin-right", "10px");
+        .style("margin-right", "10px");       // Space between elements
 
     leftContainer.append("h3")
         .text("Parkinsons Patient (pID=1001)")
@@ -470,13 +451,13 @@ function createComparativeVisualization() {
     const middleContainer = container.append("div")
         .attr("class", "charts-container")
         .attr("id", "metrics-container")
-        .style("flex", "2");
+        ;
+
 
     // Create right container for Control keyboard
     const rightContainer = container.append("div")
-        .attr("class", "keyboard-container")
+        .attr("class", "keyboard-container")   // Use class for styling
         .attr("id", "control-container")
-        .style("flex", "1")
         .style("margin-left", "10px");
 
     rightContainer.append("h3")
@@ -551,23 +532,6 @@ function createComparativeVisualization() {
         simulateKeyPresses(parkinsonsData, parkinsonsKeyboard.svg, "parkinsons", '#6c63ff', parkinsonsMetrics, startTime);
         simulateKeyPresses(controlData, controlKeyboard.svg, "control", '#ffb663', controlMetrics, startTime);
     });
-
-    // Add debug info
-    container.append("div")
-        .attr("id", "debug-info")
-        .style("margin-top", "20px")
-        .style("font-size", "12px")
-        .style("color", "#666")
-        .text("Visualization initialized. Waiting for data...");
-
-    // Update debug info periodically
-    setInterval(() => {
-        const debugElement = document.getElementById("debug-info");
-        if (debugElement) {
-            debugElement.textContent = '';
-            // `Parkinsons data points: ${parkinsonsMetrics.length}, Control data points: ${controlMetrics.length}`;
-        }
-    }, 1000);
 }
 
 // Call the main function when the DOM is ready

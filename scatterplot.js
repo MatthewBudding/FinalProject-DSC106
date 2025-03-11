@@ -1,5 +1,5 @@
 const margin = { top: 20, right: 65, bottom: 100, left: 55 },
-    width = 800 - margin.left - margin.right,
+    width = 600 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 const svg = d3.select("#scatter-plot")
@@ -71,7 +71,7 @@ Promise.all([
         });
 
     svg.append("text")
-        .attr("x", width / 2 - 100)
+        .attr("x", width / 2)
         .attr("y", height + 40) // Adjusted position for visibility
         .style("text-anchor", "middle")
         .style("font-size", "16px")

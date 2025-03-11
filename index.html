@@ -165,9 +165,28 @@
            respectively. We be showcasing their flight time from key to key as delay and the time held down on the key as 
            duration.
         </p>
-        <div id="keyboard-container">
-          <!-- Keyboard will be inserted here -->
+        <!-- <div id="keyboard-animation-container">
+        </div> -->
+        <div class="keyboard-container" id="parkinsons-container">
+          <p>Parkinson's (pID 1001)</p>
+          <!-- Keyboard will be added here -->
         </div>
+        <div id="metrics-container">
+            <!-- Charts will be added here -->
+        </div>
+        <div class="keyboard-container" id="control-container">
+            <p>Control (pID 1002)</p>
+            <!-- Keyboard will be added here -->
+        </div>
+      </section>
+
+      <!---------------------------------------------------------------------------------
+      Keyboard Heatmap Section
+      ---------------------------------------------------------------------------------->
+      
+      <section id="keyboard-heatmap-section">
+        <h2>Typing Delay Heatmap: Parkinson's vs Control</h2>
+        <div id="keyboard-heatmap-container"></div>
       </section>
 
 
@@ -178,6 +197,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="scatterplot.js"></script>
     <script src="densityplot.js"></script>
-    <script src="keyboard.js"></script>
+    <script src="keyboard_animation.js"></script>
+    <script src="keyboard_heatmap.js"></script>
 </body>
 </html>

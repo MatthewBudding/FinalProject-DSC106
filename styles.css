@@ -447,6 +447,58 @@ Quote Break
     opacity: 0.3;
 }
 
+/********************************************************************************
+Keyboard Animation Section
+********************************************************************************/
+
+
+#keyboard-comparison-section {
+    display: flex;
+    justify-content: space-between; /* Space out keyboards and graphs */
+    align-items: flex-start;      /* Align items to the top */
+    flex-wrap: nowrap;           /* Prevent wrapping to stay horizontal */
+    overflow-x: auto;           /* Add horizontal scroll if needed */
+    margin-top: 2rem;
+}
+.keyboard-container {
+    flex: 0 0 auto;       /* Do not grow or shrink, use content width */
+    margin-right: 20px;  /* Space between keyboards and charts */
+}
+
+.charts-container {
+    flex: 0 0 500px;    /* Fixed width for charts */
+    margin-right: 20px; /*space on right*/
+}
+
+#metrics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#metrics-container svg{
+  width: 100%;
+  min-height: 200px;
+}
+
+/********************************************************************************
+Keyboard Heatmap
+********************************************************************************/
+
+#keyboard-heatmap-section {
+    display: flex;
+    flex-direction: column; /* Stack title and heatmap vertically */
+    /* align-items: center;      Center horizontally */
+    margin-top: 2rem;       /* Add space from previous section */
+}
+
+#heatmap-container {
+    /* No specific styles needed here, just serves as a container */
+    display: flex; /* Use flexbox to center the SVG */
+    justify-content: center;
+    width: 100%;  /* Use full width of parent */
+}
+
 
 /********************************************************************************
 Responsive design
@@ -475,5 +527,18 @@ Responsive design
     .text-content,
     .scatter-container {
         max-width: 100%;
+    }
+
+    #keyboard-comparison-section {
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    }
+
+    .keyboard-container,
+    .charts-container {
+        flex: 1 1 100%; /* Full width on smaller screens */
+        margin-right: 0;  /* Remove margin on small screens */
+    }
+    .charts-container{
+        margin-bottom: 1em;
     }
 }
