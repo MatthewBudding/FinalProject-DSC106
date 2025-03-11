@@ -165,31 +165,44 @@
            respectively. We be showcasing their flight time from key to key as delay and the time held down on the key as 
            duration.
         </p>
-        <!-- <div id="keyboard-animation-container">
-        </div> -->
-        <div class="keyboard-container" id="parkinsons-container">
-          <p>Parkinson's (pID 1001)</p>
-          <!-- Keyboard will be added here -->
-        </div>
-        <div id="metrics-container">
+        <div id="keyboard-animation-container">
+          <div class="keyboard-container" id="parkinsons-container">
+            <p>Parkinson's (pID 1001)</p>
+            <!-- Keyboard will be added here -->
+          </div>
+          <div id="metrics-container">
             <!-- Charts will be added here -->
-        </div>
-        <div class="keyboard-container" id="control-container">
+          </div>
+          <div class="keyboard-container" id="control-container">
             <p>Control (pID 1002)</p>
             <!-- Keyboard will be added here -->
+          </div>
         </div>
       </section>
 
       <!---------------------------------------------------------------------------------
       Keyboard Heatmap Section
       ---------------------------------------------------------------------------------->
-      
       <section id="keyboard-heatmap-section">
-        <h2>Typing Delay Heatmap: Parkinson's vs Control</h2>
-        <div id="keyboard-heatmap-container"></div>
+        <h2>Typing Delay and Duration Heatmaps: Parkinson's vs Control</h2>
+        <div class="heatmap-options">
+          <label for="statistic-select">Choose Statistic:</label>
+          <select id="statistic-select">
+            <option value="mean">Mean</option>
+            <option value="median">Median</option>
+          </select>
+        </div>
+        <div id="keyboard-heatmap-container">
+          <div id="delay-heatmap">
+            <h3>Delay Differences</h3>
+            <!-- Delay heatmap will be added here -->
+          </div>
+          <div id="duration-heatmap">
+            <h3>Duration Differences</h3>
+            <!-- Duration heatmap will be added here -->
+          </div>
+        </div>
       </section>
-
-
 
 
     </div>

@@ -11,8 +11,8 @@ function createKeyboardLayout() {
 
 // Function to create the keyboard SVG elements with customizable size and colors
 function createKeyboardSVG(layout, id, pressColor) {
-    const keyWidth = 25; // Smaller keyboard
-    const keyHeight = 25;
+    const keyWidth = 20; // Smaller keyboard
+    const keyHeight = 20;
     const keySpacing = 3;
 
     // Calculate offsets for better alignment
@@ -58,7 +58,7 @@ function createKeyboardSVG(layout, id, pressColor) {
                 else if (key === "Enter") width = keyWidth * 2;
                 else if (key === "Shift_L" || key === "Shift_R") width = keyWidth * 2.25;
                 else if (key === 'Control_L' || key === 'Control_R') width = keyWidth * 1.75;
-                else if (key === 'space') width = keyWidth * 5.8;
+                else if (key === 'space') width = keyWidth * 7;
 
                 // Update position tracker for next key
                 positionTracker[rowIndex] += width + keySpacing;
@@ -131,7 +131,7 @@ function createSampleData(patientType) {
 
 // Function to create metric charts
 function createMetricCharts(containerId, width, height) {
-    const margin = { top: 20, right: 20, bottom: 30, left: 50 };
+    const margin = { top: 20, right: 50, bottom: 30, left: 50 };
     const chartWidth = width - margin.left - margin.right;
     const chartHeight = (height - margin.top - margin.bottom - 10) / 2; // Half height for each chart
 
@@ -479,7 +479,7 @@ function createComparativeVisualization() {
     document.getElementById("control-container").appendChild(controlKeyboard.svg);
 
     // Create metrics charts
-    const charts = createMetricCharts("metrics-container", 500, 300);
+    const charts = createMetricCharts("metrics-container", 475, 300);
 
     // Arrays to track metrics
     const parkinsonsMetrics = [];

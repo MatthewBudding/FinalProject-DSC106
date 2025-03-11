@@ -460,25 +460,34 @@ Keyboard Animation Section
     overflow-x: auto;           /* Add horizontal scroll if needed */
     margin-top: 2rem;
 }
-.keyboard-container {
-    flex: 0 0 auto;       /* Do not grow or shrink, use content width */
-    margin-right: 20px;  /* Space between keyboards and charts */
+
+#keyboard-animation-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures they stack when the screen is narrow */
+    gap: 10px; /* Optional for spacing between containers */
+    align-items: center;
 }
 
-.charts-container {
-    flex: 0 0 500px;    /* Fixed width for charts */
-    margin-right: 20px; /*space on right*/
+.keyboard-container {
+    flex: 1;
+    /* Smaller portion */
+    min-width: 20%;
+    /* Ensures they stay smaller */
+    box-sizing: border-box;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    text-align: center;
 }
 
 #metrics-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-#metrics-container svg{
-  width: 100%;
-  min-height: 200px;
+    flex: 1;
+    /* Larger portion */
+    min-width: 40%;
+    /* Ensures enough space */
+    box-sizing: border-box;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    text-align: center;
 }
 
 /********************************************************************************
@@ -487,16 +496,56 @@ Keyboard Heatmap
 
 #keyboard-heatmap-section {
     display: flex;
-    flex-direction: column; /* Stack title and heatmap vertically */
-    /* align-items: center;      Center horizontally */
-    margin-top: 2rem;       /* Add space from previous section */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
 }
 
-#heatmap-container {
-    /* No specific styles needed here, just serves as a container */
-    display: flex; /* Use flexbox to center the SVG */
-    justify-content: center;
-    width: 100%;  /* Use full width of parent */
+.heatmap-options {
+    margin-bottom: 1rem;
+}
+
+#keyboard-heatmap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#delay-heatmap,
+#duration-heatmap {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    /* Add some space between the heatmaps */
+}
+
+#statistic-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer;
+    min-width: 150px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#statistic-select:focus {
+    outline: none;
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+#statistic-select:hover {
+    border-color: var(--orange);
 }
 
 
