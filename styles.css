@@ -550,6 +550,44 @@ Keyboard Heatmap
 
 
 /********************************************************************************
+Dual Bar Chart Section
+********************************************************************************/
+
+#dual-bar-section {
+    display: flex;
+    flex-wrap: wrap;
+    /* Ensures they stack on smaller screens */
+    gap: 20px;
+    /* Adds spacing between elements */
+    align-items: center;
+    /* Align content vertically */
+    padding: 20px;
+}
+
+.dual-bar-container {
+    flex: 2;
+    /* SVG takes more space */
+    min-width: 60%;
+    /* Ensures the SVG gets priority */
+}
+
+#dual-bar-plot {
+    width: 100%;
+    /* Ensures the SVG scales properly */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.dual-bar-text {
+    flex: 1;
+    /* Text takes less space */
+    min-width: 30%;
+    /* Ensures text remains readable */
+}
+
+
+
+/********************************************************************************
 Responsive design
 ********************************************************************************/
 @media (max-width: 768px) {
@@ -589,5 +627,14 @@ Responsive design
     }
     .charts-container{
         margin-bottom: 1em;
+    }
+
+    #dual-bar-section {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .dual-bar-container,
+    .dual-bar-text {
+        min-width: 100%; /* Full width when stacked */
     }
 }

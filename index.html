@@ -161,9 +161,14 @@
       <section id="keyboard-animation-section">
         <h2>Keystroke Analysis</h2>
         <p>Let's investigate the character by character patterns between those with Parkinsons and our control group. 
-          In particular, let's compare two individuals with similar wpm, pID 1001 and 1002, who have a wpm of 118 and 119,
-           respectively. We be showcasing their flight time from key to key as delay and the time held down on the key as 
-           duration.
+          In particular, let's take a look at the flight time from key to key (we'll define as delay) and the time 
+          held down on the key (we'll define as duration). To demonstrate this, we'll showcase one patient with
+          similar typing speed from both of the groups: pID 1001 and 1002, who have a wpm of 118 and 119, respectively. 
+          Below you can see
+          the typing patterns of these two individuals as well as the delay and duration corresponding to every key press.
+          Typically, lower delay and duration values are associated with faster typing speeds. Here, while both individuals
+          have similar delay and duration values, the individual with Parkinsons is has slightly higher values over the
+          control group, perhaps explaining why the individual has a slightly lower typing speed. 
         </p>
         <div id="keyboard-animation-container">
           <div class="keyboard-container" id="parkinsons-container">
@@ -184,7 +189,14 @@
       Keyboard Heatmap Section
       ---------------------------------------------------------------------------------->
       <section id="keyboard-heatmap-section">
-        <h2>Typing Delay and Duration Heatmaps: Parkinson's vs Control</h2>
+        <h2>Typing Delay and Duration For Each Key</h2>
+        <p>
+          Looking at the typing patterns of all participants, we can develop a form of heatmap that shows an 
+          aggregated view of the delay and duration for each key. We can calculate the difference between the
+          the Parkinsons and Control group from the heatmap to see if there are any significant differences 
+          in typing patterns. You can choose the statistic for which to display the heatmaps below and hover 
+          over the keys to see the indicated values.
+        </p>
         <div class="heatmap-options">
           <label for="statistic-select">Choose Statistic:</label>
           <select id="statistic-select">
@@ -193,14 +205,41 @@
           </select>
         </div>
         <div id="keyboard-heatmap-container">
+          <p>Below is heatmap of the difference in delay. The darker the red keys mean that patients 
+            with Parkinsons take longer to press the key compared to the control group. The darker the blue 
+            keys means that patients with Parkinsons take less time to press the key compared to the control group.
+            Note that some values exceed the range of the heatmap.
+          </p>
           <div id="delay-heatmap">
             <h3>Delay Differences</h3>
             <!-- Delay heatmap will be added here -->
           </div>
+          <p>Below is heatmap of the difference in duration. The darker the red keys mean that patients 
+            with Parkinsons hold the key down longer compared to the control group. The darker the blue 
+            keys means that patients with Parkinsons hold the key down for less time compared to the control group.
+            Note that some values exceed the range of the heatmap.
+          </p>
           <div id="duration-heatmap">
             <h3>Duration Differences</h3>
             <!-- Duration heatmap will be added here -->
           </div>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore molestias laudantium dolore nostrum earum illo tempore voluptate fugiat odit vel ullam consequuntur culpa, ducimus officiis tempora quas alias error iure?
+        </p>
+      </section>
+
+
+      <!---------------------------------------------------------------------------------
+      Dual Bar Plot Section
+      ---------------------------------------------------------------------------------->
+      <section id="dual-bar-section">
+        <h2>Aggregated Delay and Duration</h2>
+        <div class="dual-bar-container">
+          <svg id="dual-bar-plot"></svg>
+        </div>
+        <div class="dual-bar-text">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat voluptatibus ex debitis hic optio voluptatem praesentium odit ullam quae. Asperiores saepe fugit corporis laboriosam facilis amet cupiditate consequuntur voluptatem!</p>
         </div>
       </section>
 
