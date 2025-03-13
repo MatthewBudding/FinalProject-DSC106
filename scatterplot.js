@@ -57,17 +57,25 @@ Promise.all([
         .attr("fill", d => colorScale(d))
         .on("mouseover", (event, d) => {
             tooltip.style("opacity", 1);
+            d3.select(event.currentTarget)
+                .transition()
+                .duration(200)
+                .attr("r", 8); // Expand the circle
         })
         .on("mousemove", (event, d) => {
             tooltip.html(`
                 <div>UPDRS108: ${d.updrs108}</div>
-                <div>Typing Speed: ${d.typingSpeed.toFixed(3) }</div>
+                <div>Typing Speed: ${d.typingSpeed.toFixed(3)}</div>
             `)
                 .style("left", (event.pageX + 15) + "px")
                 .style("top", (event.pageY - 30) + "px");
         })
-        .on("mouseout", () => {
+        .on("mouseout", (event, d) => {
             tooltip.style("opacity", 0);
+            d3.select(event.currentTarget)
+                .transition()
+                .duration(200)
+                .attr("r", 5); // Shrink the circle back to original size
         });
 
     svg.append("text")
