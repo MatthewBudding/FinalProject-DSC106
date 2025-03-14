@@ -17,8 +17,8 @@ function createBarGraph(aggregationFunction = "mean") {
     });
 
     const data = [
-      { metric: "Avg Hold Time (ms)", "Parkinson's": metrics[0].avgHoldTime, "Non-Parkinson's": metrics[1].avgHoldTime },
-      { metric: "Avg Delay Time (ms)", "Parkinson's": metrics[0].avgFlightTime, "Non-Parkinson's": metrics[1].avgFlightTime }
+      { metric: "Avg Duration (ms)", "Parkinson's": metrics[0].avgHoldTime, "Non-Parkinson's": metrics[1].avgHoldTime },
+      { metric: "Avg Delay (ms)", "Parkinson's": metrics[0].avgFlightTime, "Non-Parkinson's": metrics[1].avgFlightTime }
     ];
 
     const margin = { top: 40, right: 30, bottom: 50, left: 60 },

@@ -9,11 +9,14 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+
     <!-- other imports -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -46,8 +49,8 @@
             <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b298df55832981.5994fbb4e36d6.gif" alt="eWatch smartwatch">
           </div>
           
-          <div class="badge badge-top">2025</div>
-          <div class="badge badge-bottom">👋</div>
+          <div class="badge badge-top"><i class="far fa-keyboard"></i></div>
+          <div class="badge badge-bottom"><i class="fas fa-chart-line"></i></div>
         </div>
       </section>
       
@@ -56,25 +59,25 @@
       ---------------------------------------------------------------------------------->
       <div class="features">
         <div class="feature">
-          <div class="feature-icon"><i class="fas fa-sun"></i></div>
+          <div class="feature-icon"></div>
           <h3 class="feature-title">Eric <span class="highlight-orange">Cheng</span></h3>
           <p class="feature-desc"> Designer</p>
         </div>
         
         <div class="feature">
-          <div class="feature-icon"><i class="fas fa-star"></i></div>
+          <div class="feature-icon"></div>
           <h3 class="feature-title">Jerric <span class="highlight-orange">Jiang</span></h3>
           <p class="feature-desc">Scatter Plot/Script</p>
         </div>
         
         <div class="feature">
-          <div class="feature-icon"><i class="fas fa-eye"></i></div>
+          <div class="feature-icon"></div>
           <h3 class="feature-title">Omid <span class="highlight-orange">Alamdar</span></h3>
           <p class="feature-desc">Typing Speed/Video</p>
         </div>
         
         <div class="feature">
-          <div class="feature-icon"><i class="fas fa-globe"></i></div>
+          <div class="feature-icon"></div>
           <h3 class="feature-title">Matthew <span class="highlight-orange">Budding</span></h3>
           <p class="feature-desc">Statistics/Aggregate Keystroke</p>
         </div>
@@ -87,7 +90,7 @@
         <!-- Key statistics section -->
         <div class="stats-section">
           <div class="stats-card">
-            <h3>Key Statistics</h3>
+            <h3>Key <span class="highlight-orange">Statistics</span></h3>
             <p class="stats-description">Brief overview of Parkinson's disease and our dataset.
             </p>
       
@@ -117,10 +120,10 @@
       
         <!-- Density Histogram Section -->
         <div class="histo-section">
-          <h2>Typing Speed Comparison</h2>
+          <h2><span class="highlight-orange">Typing Speed</span> Comparison</h2>
           <p class="histo-description">Due to the dibilitating nature of the disease, you might expect a significant difference in 
-            typing speed between individuals with and without Parkinson's disease. However, the distribution of typing speeds 
-            suggests that the gap is much less pronounced than anticipated.
+            typing speed between individuals with and without Parkinson's disease. <em>However</em>, the distribution of typing speeds 
+            suggests that the gap is much less pronounced than hypothesized.
           </p>
       
           <div class="density-plot-container">
@@ -136,8 +139,14 @@
       ---------------------------------------------------------------------------------->
       <section class="scatter-section">
         <div class="text-content">
-          <h2>Perhaps the Severity of Parkinsons Affects Typing Speed?</h2>
-          <p>The Unified Parkinson's Disease Rating Scale (UPDRS-III) is a clinical assessment of motor impairment in Parkinson's disease. Higher scores indicate greater movement difficulties, including tremors, rigidity, and bradykinesia. This scatterplot explores the relationship between UPDRS-III scores and typing speed. Purple dots represent individuals with Parkinson’s, while orange dots represent individuals without Parkinson’s.</p>
+          <h2>Perhaps the <span class="highlight-purple">Severity</span> of Parkinsons Affects Typing Speed?</h2>
+          <p>The<span class="highlight-purple"> <strong>Unified Parkinson's Disease Rating Scale</strong> (UPDRS-III) </span>
+            is a clinical assessment of motor impairment in Parkinson's disease. 
+            Higher scores indicate greater movement difficulties, 
+            including tremors, rigidity, and bradykinesia. 
+            This scatterplot explores the relationship between UPDRS-III scores and typing speed. 
+            While there is a slight downward trend of <em>-1.24 wpm</em> for every increase of UPDRS, 
+            the amount of variability makes it difficult to be certain of a relationship.</p>
         </div>
         <div class="scatter-container">
           <svg id="scatter-plot"></svg>
@@ -149,7 +158,7 @@
       ---------------------------------------------------------------------------------->
       <div class="quote-container">
         <blockquote class="featured-quote">
-          <p>"Many people know what Parkinson's looks like… but not the mental anguish it can cause, and the darkest moments
+          <p>"Many people know what Parkinson's looks like… but not the mental <span class="highlight-purple">anguish</span> it can cause, and the darkest moments
             we go through."</p>
           <cite>Guy Deacon, former colonel of the Royal Armoured Corps in the British Army</cite>
         </blockquote>
@@ -159,27 +168,55 @@
       Keyboard Animation Section
       ---------------------------------------------------------------------------------->
       <section id="keyboard-animation-section">
-        <h2>Keystroke Analysis</h2>
-        <p>Let's investigate the character by character patterns between those with Parkinsons and our control group. 
-          In particular, let's take a look at the flight time from key to key (we'll define as delay) and the time 
-          held down on the key (we'll define as duration). To demonstrate this, we'll showcase one patient with
-          similar typing speed from both of the groups: pID 1001 and 1002, who have a wpm of 118 and 119, respectively. 
-          Below you can see
-          the typing patterns of these two individuals as well as the delay and duration corresponding to every key press.
-          Typically, lower delay and duration values are associated with faster typing speeds. Here, while both individuals
-          have similar delay and duration values, the individual with Parkinsons is has slightly higher values over the
-          control group, perhaps explaining why the individual has a slightly lower typing speed. 
-        </p>
+        <h2> <span class="highlight-orange">Keystroke </span>Analysis</h2>
+        <div class="keyboard-animation-content">
+          <div class="keyboard-animation-text">
+            <p>Let's investigate the character by character patterns between those with Parkinsons and our control group.
+              In particular, we'll look at their <span class="highlight-purple"><strong>delay</strong></span> 
+              between key presses and <span class="highlight-purple"><strong>duration</strong></span> while holding a key. 
+              To demonstrate this,
+              we'll showcase one patient with
+              similar typing speed from both of the groups:
+            </p>
+            <ul>
+              <li><span class="highlight-purple">pID 1001</span>, who has Parkinson's and a wpm of 118</li>
+              <li><span class="highlight-orange">pID 1002</span>, who does not have Parkinson's and a wpm of 119</li>
+            </ul>
+            <p>
+              Below you can see the typing patterns of these two individuals as well as a graph of the delay and duration
+              corresponding to every key press.
+              <!-- Typically, lower delay and duration values are associated with faster typing speeds. Here, while both individuals
+                        have similar delay and duration values, the individual with Parkinsons is has slightly higher values over the
+                        control group, perhaps explaining why the individual has a slightly lower typing speed. -->
+            </p>
+          </div>
+          <div class="definition-box">
+            <div class="definition">
+              <div class="definition-header">
+                <div class="definition-icon"><i class="fas fa-dove"></i></div>
+                <h3 class="definition-title">Delay</h3>
+              </div>
+              <p class="definition-desc">Flight time from key to key</p>
+            </div>
+            <div class="definition">
+              <div class="definition-header">
+                <div class="definition-icon"><i class="fas fa-stopwatch"></i></div>
+                <h3 class="definition-title">Duration</h3>
+              </div>
+              <p class="definition-desc">Time held down on the key</p>
+            </div>
+          </div>
+        </div>
         <div id="keyboard-animation-container">
           <div class="keyboard-container" id="parkinsons-container">
-            <p>Parkinson's (pID 1001)</p>
+            <p><span class="highlight-purple"><strong>Parkinson's (pID 1001)</strong></span></p>
             <!-- Keyboard will be added here -->
           </div>
           <div id="metrics-container">
             <!-- Charts will be added here -->
           </div>
           <div class="keyboard-container" id="control-container">
-            <p>Control (pID 1002)</p>
+            <p><span class="highlight-orange"><strong>Control (pID 1002)</strong></span></p>
             <!-- Keyboard will be added here -->
           </div>
         </div>
@@ -189,23 +226,23 @@
       Keyboard Heatmap Section
       ---------------------------------------------------------------------------------->
       <section id="keyboard-heatmap-section">
-        <h2>Typing Delay and Duration For Each Key</h2>
+        <h2><span class="highlight-orange">Key-wise</span> Delay & Duration</h2>
         <p>
-          Looking at the typing patterns of all participants, we can develop a form of heatmap that shows an 
+          Looking at the typing patterns of <em>all</em> participants, we can develop a form of <span class="highlight-orange">heatmap</span> that shows an 
           aggregated view of the delay and duration for each key. We can calculate the difference between the
           the Parkinsons and Control group from the heatmap to see if there are any significant differences 
           in typing patterns. You can choose the statistic for which to display the heatmaps below and hover 
           over the keys to see the indicated values.
         </p>
         <div class="heatmap-options">
-          <label for="statistic-select">Choose Statistic:</label>
+          <label for="statistic-select"><strong>Choose Statistic:</strong></label>
           <select id="statistic-select">
             <option value="mean">Mean</option>
             <option value="median">Median</option>
           </select>
         </div>
         <div id="keyboard-heatmap-container">
-          <p>Below is heatmap of the difference in delay. The darker the red keys mean that patients 
+          <p>Below is heatmap of the difference in <span class="highlight-purple"><strong>delay</strong></span>. The darker the red keys mean that patients 
             with Parkinsons take longer to press the key compared to the control group. The darker the blue 
             keys means that patients with Parkinsons take less time to press the key compared to the control group.
             Note that some values exceed the range of the heatmap.
@@ -214,7 +251,7 @@
             <h3>Delay Differences</h3>
             <!-- Delay heatmap will be added here -->
           </div>
-          <p>Below is heatmap of the difference in duration. The darker the red keys mean that patients 
+          <p>Below is heatmap of the difference in <span class="highlight-purple"><strong>duration</strong></span>. The darker the red keys mean that patients 
             with Parkinsons hold the key down longer compared to the control group. The darker the blue 
             keys means that patients with Parkinsons hold the key down for less time compared to the control group.
             Note that some values exceed the range of the heatmap.
@@ -227,7 +264,8 @@
         <p>
           While there are a few keys in which those with Parkinson's have a lower delay or duration, notably the 'k' key,
           the majority of the keys show a higher delay and duration when compared to the control group. 
-          In other words, those with Parkinson's have greater trouble locating or pressing on a key and are slower to release it.
+          In other words, those with Parkinson's have greater trouble locating or pressing on just about every key and 
+          are also slower to release it.
         </p>
       </section>
 
@@ -236,12 +274,12 @@
       Dual Bar Plot Section
       ---------------------------------------------------------------------------------->
       <section id="dual-bar-section">
-        <h2>Aggregated Delay and Duration</h2>
+        <h2><span class="highlight-purple">Aggregated</span> Delay and Duration</h2>
         <div class="dual-bar-container">
           <svg id="dual-bar-plot"></svg>
         </div>
         <div class="dual-bar-text">
-          <p>To the left is a bar graph displaying the differences in typing behavior between Parkinson’s and non-Parkinson’s individuals by analyzing hold time (the duration a key is pressed) and delay time (the time between keystrokes). </p>
+          <p>To the left is a bar graph displaying the differences in typing behavior between Parkinson’s and non-Parkinson’s individuals by analyzing duration (the time a key is held) and delay time (the time between keystrokes). </p>
           <p> Looking at the mean results shows that non-Parkinson’s individuals have a longer hold time, but the median chart suggests a smaller difference, implying variability within the Parkinson’s group. Delay time is consistently longer for Parkinson’s individuals in both charts, indicating slower typing due to motor impairments. The discrepancy between mean and median suggests that outliers in hold time affect the average, highlighting inconsistent typing patterns. </p>
         </div>
       </section>
