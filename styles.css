@@ -100,6 +100,7 @@ p {
         opacity: 1;
     }
 }
+
 .blinking-cursor {
     font-weight: 100;
     color: var(--black);
@@ -174,7 +175,7 @@ p {
     border-radius: 2rem;
     font-weight: 500;
     font-size: 0.9rem;
-    
+
 }
 
 .badge-top {
@@ -477,6 +478,7 @@ Keyboard Animation Section
     margin-right: 20px;
     margin-bottom: 10px;
 }
+
 .keyboard-animation-content ul {
     margin-bottom: 10px;
 }
@@ -527,8 +529,10 @@ Keyboard Animation Section
 
 #keyboard-animation-container {
     display: flex;
-    flex-wrap: wrap; /* Ensures they stack when the screen is narrow */
-    gap: 10px; /* Optional for spacing between containers */
+    flex-wrap: wrap;
+    /* Ensures they stack when the screen is narrow */
+    gap: 10px;
+    /* Optional for spacing between containers */
     align-items: center;
 }
 
@@ -653,6 +657,32 @@ Dual Bar Chart Section
 }
 
 
+/* Violin Plots Section */
+#violin-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.duration-violin-plot .delay-violin-plot {
+    flex: 1;
+    min-width: 30%;
+    height: 400px;
+    /* Adjust height as needed */
+}
+
+#violin-text {
+    flex: 1;
+    min-width: 30%;
+    padding: 20px;
+    background-color: orange;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 
 /********************************************************************************
 Responsive design
@@ -674,6 +704,7 @@ Responsive design
         flex-basis: 50%;
         margin-bottom: 1rem;
     }
+
     .scatter-section {
         flex-direction: column;
     }
@@ -684,24 +715,30 @@ Responsive design
     }
 
     #keyboard-comparison-section {
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        flex-wrap: wrap;
+        /* Allow wrapping on smaller screens */
     }
 
     .keyboard-container,
     .charts-container {
-        flex: 1 1 100%; /* Full width on smaller screens */
-        margin-right: 0;  /* Remove margin on small screens */
+        flex: 1 1 100%;
+        /* Full width on smaller screens */
+        margin-right: 0;
+        /* Remove margin on small screens */
     }
-    .charts-container{
+
+    .charts-container {
         margin-bottom: 1em;
     }
 
     #dual-bar-section {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
+        /* Stack items vertically */
     }
 
     .dual-bar-container,
     .dual-bar-text {
-        min-width: 100%; /* Full width when stacked */
+        min-width: 100%;
+        /* Full width when stacked */
     }
 }

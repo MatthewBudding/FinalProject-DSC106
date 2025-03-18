@@ -271,7 +271,7 @@
 
 
       <!---------------------------------------------------------------------------------
-      Dual Bar Plot Section
+      Typing Metrics Section
       ---------------------------------------------------------------------------------->
       <section id="dual-bar-section">
         <h2><span class="highlight-purple">Aggregated</span> Delay and Duration</h2>
@@ -279,10 +279,32 @@
           <svg id="dual-bar-plot"></svg>
         </div>
         <div class="dual-bar-text">
-          <p>To the left is a bar graph displaying the differences in typing behavior between Parkinson’s and non-Parkinson’s individuals by analyzing duration (the time a key is held) and delay time (the time between keystrokes). </p>
-          <p> Looking at the mean results shows that non-Parkinson’s individuals have a longer hold time, but the median chart suggests a smaller difference, implying variability within the Parkinson’s group. Delay time is consistently longer for Parkinson’s individuals in both charts, indicating slower typing due to motor impairments. The discrepancy between mean and median suggests that outliers in hold time affect the average, highlighting inconsistent typing patterns. </p>
+          <p>To the left is a bar graph displaying the differences in typing behavior between Parkinson’s and non-Parkinson’s
+            individuals by analyzing duration (the time a key is held) and delay time (the time between keystrokes). </p>
+          <p> Looking at the mean results shows that non-Parkinson’s individuals have a longer hold time, but the median chart
+            suggests a smaller difference, implying variability within the Parkinson’s group. Delay time is consistently
+            longer for Parkinson’s individuals in both charts, indicating slower typing due to motor impairments. The
+            discrepancy between mean and median suggests that outliers in hold time affect the average, highlighting
+            inconsistent typing patterns. </p>
         </div>
       </section>
+
+      <section id="violin-section">
+        
+        <div id="duration-violin-plot"></div>
+        <div id="delay-violin-plot"></div>
+        <div class="violin-text">
+          <h3>After removing outliers</h3>
+          <p>After removing the outliers using IQR, we notice that both the mean and the 
+            median of the duration and delay times are higher for the Parkinson's group. Duration
+            times are heavily reduced from the original mean, resulting in evidence that
+            the Parkinson's group has higher duration times, which is more consistent with
+            our previous findings in the heatmap. Delay times also change but are still
+            have the same relationship as before.
+          </p>
+        </div>
+      </section>
+      
 
 
     </div>
@@ -293,5 +315,6 @@
     <script src="keyboard_animation.js"></script>
     <script src="keyboard_heatmap.js"></script>
     <script src="keystroke_metrics.js"></script>
+    <script src="violin.js"></script>
 </body>
 </html>
