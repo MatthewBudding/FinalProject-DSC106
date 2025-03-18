@@ -388,19 +388,6 @@ Scatterplot section
     max-width: 50%;
 }
 
-/* Ensure the SVG takes full width */
-/* svg {
-    background-color: white;
-    border-radius: 1.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    min-height: 300px;
-    width: 100%;
-    position: relative;
-    padding-bottom: 2rem;
-} */
-
-
 /********************************************************************************
 Quote Break 
 ********************************************************************************/
@@ -682,7 +669,83 @@ Dual Bar Chart Section
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/********************************************************************************
+2D Density Section
+********************************************************************************/
 
+#twod-density-plot-section {
+    display: flex;
+    align-items: center;
+    /* Align items vertically */
+    justify-content: space-between;
+    /* Space them out */
+    gap: 20px;
+    /* Adds space between text and plot */
+    margin-bottom: 2rem;
+}
+
+.twod-text {
+    flex: 1;
+    /* Allow text to take up available space */
+    max-width: 40%;
+    /* Prevents text from getting too wide */
+}
+
+#twod-density-plot-container {
+    flex: 2;
+    /* Give the plot more space */
+    max-width: 60%;
+}
+
+/* Optional: Make sure the SVG is responsive */
+#twod-density-plot {
+    /* width: 100%; */
+    height: auto;
+}
+
+
+/********************************************************************************
+Conclusion Section
+********************************************************************************/
+
+.conclusion-section {
+    display: flex;
+    align-items: center;
+    /* Align items vertically */
+    justify-content: space-between;
+    /* Space elements apart */
+    gap: 20px;
+    /* Space between image and text */
+    /* max-width: 900px; */
+    /* Adjust as needed */
+    margin: 0 auto;
+    /* Center the section */
+}
+
+.ending-image {
+    flex: 1;
+    /* Allow image container to take up space */
+    max-width: 40%;
+    /* Ensure the image doesn’t take too much space */
+}
+
+.ending-image img {
+    width: 75%;
+    /* Make image responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    border-radius: 20px;
+    /* Adjust for softer rounded corners */
+    border: 3px solid var(--black);
+    /* Optional: Add a subtle border */
+}
+
+.ending-text {
+    flex: 2;
+    /* Allow text container to take up more space */
+    max-width: 60%;
+}
 
 /********************************************************************************
 Responsive design
@@ -740,5 +803,28 @@ Responsive design
     .dual-bar-text {
         min-width: 100%;
         /* Full width when stacked */
+    }
+    #twod-density-plot-section {
+        flex-direction: column;
+        /* Stack items on top of each other */
+        align-items: center;
+        text-align: center;
+    }
+
+    .twod-text,
+    #twod-density-plot-container {
+        max-width: 100%;
+        /* Allow full width */
+    }
+    
+    .conclusion-section {
+        flex-direction: column;
+        /* Stack items on smaller screens */
+        text-align: center;
+    }
+
+    .ending-image,
+    .ending-text {
+        max-width: 100%;
     }
 }

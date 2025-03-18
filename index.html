@@ -294,7 +294,7 @@
         <div id="duration-violin-plot"></div>
         <div id="delay-violin-plot"></div>
         <div class="violin-text">
-          <h3>After removing outliers</h3>
+          <h3>After removing <span class="highlight-orange">outliers</span></h3>
           <p>After removing the outliers using IQR, we notice that both the mean and the 
             median of the duration and delay times are higher for the Parkinson's group. Duration
             times are heavily reduced from the original mean, resulting in evidence that
@@ -304,8 +304,50 @@
           </p>
         </div>
       </section>
-      
 
+      <!---------------------------------------------------------------------------------
+      2D Density Section
+      ---------------------------------------------------------------------------------->
+      <section id="twod-density-plot-section">
+        <div class="twod-text">
+          <h2>Delay vs. Duration <span class="highlight-purple">Density Plot</span></h2>
+          <p>
+            This 2D density plot shows the distribution of delay and duration times 
+            for both the Parkinson's and control groups.
+            This reveals that those with parkinsons have more individuals that have higher delay 
+            and duration times. However, upon proforming a t-test, we find that the difference in
+            mean delay times is not <strong>statistically significant</strong> (p=0.43), while the difference in mean duration
+            times is (p=0.02). This suggests that the duration of key presses is a more reliable indicator of
+            Parkinson's disease.
+          </p>
+        </div>
+        <div id="twod-density-plot-container">
+          <svg id="twod-density-plot"></svg>
+        </div>
+      </section>
+
+      <!---------------------------------------------------------------------------------
+      Conclusion Section
+      ---------------------------------------------------------------------------------->
+      
+      <section class="conclusion-section">
+        <div class="ending-image">
+          <img src="https://images.squarespace-cdn.com/content/v1/6367dcf362f6507241ea6690/c7c367b8-1502-40c3-8db4-d7a520cbcc12/Hand+and+Switch+Master+1-1+01.gif?format=1000w">
+        </div>
+        <div class="ending-text">
+          <h1>Conclusion</h1>
+          <p>
+            In conclusion, our analysis of the typing data from individuals with and without Parkinson's disease 
+            has shown that there are significant differences in typing behavior between the two groups. 
+            While the difference in typing speed was less pronounced than expected, the delay and duration of key presses 
+            were consistently higher for individuals with Parkinson's disease. Particularly, duration times were found to be
+            significantly higher for the Parkinson's group, suggesting that this metric may be a indicator of the disease.
+            This coincides with the finding in the paper in which we had sourced our data.
+            Our findings highlight the potential of using typing data as a diagnostic tool for Parkinson's disease and 
+            provide insights into the motor symptoms of the disease.
+          </p>
+        </div>
+      </section>
 
     </div>
     <!-- Load D3.js -->
@@ -316,5 +358,6 @@
     <script src="keyboard_heatmap.js"></script>
     <script src="keystroke_metrics.js"></script>
     <script src="violin.js"></script>
+    <script src="2d_density.js"></script>
 </body>
 </html>
